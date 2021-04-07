@@ -66,7 +66,6 @@ export const Header = () => {
               </svg>
           </button>
         </div>
-
           <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${hidden ? "hidden " : ""}`} id="navbar-search">
             <div className="relative mt-3 md:hidden">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">

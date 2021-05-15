@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { useTitle } from '../hooks/useTitle';
+import { MovieDetails as Details } from '@tdanks2000/tmdb-wrapper';
 
 export const MovieDetails = () => {
   const navigate = useNavigate();
   const params  = useParams();
-  const [ movie, setMovie ] = useState({});
+  const [ movie, setMovie ] = useState({} as Details);
 
   const options = {
     method: 'GET',
@@ -32,9 +33,7 @@ export const MovieDetails = () => {
     fetchMovie();
   }, [params.id])
 
-  useEffect(() => {
-    document.title = `${movie!.title} | Movie finder`;
-  })
+  useTitle(movie.title);
 
   return (
     <section className="mt-9 flex justify-around flex-wrap py-5">
